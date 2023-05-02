@@ -24,7 +24,7 @@ resource "aws_instance" "frontend" {
     name    = "frontend-dev.swedev99.online"
     type    = "A"
     ttl     = 30
-    records = [aws_instance.fronend.private_ip]
+    records = [aws_instance.frontend.private_ip]
  }
 resource "aws_instance" "mongodb" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
