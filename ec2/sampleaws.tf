@@ -6,3 +6,11 @@ resource "aws_instance" "centos" {
     Name = "HelloWorld"
   }
 }
+
+resource "aws_route53_record" "helloworld" {
+  zone_id = "Z0587270PBVKKHW0FPNL"
+  name    = "HelloWorld"
+  type    = "A"
+  ttl     = 30
+  records = [aws_eip.lb.public_ip]
+}
