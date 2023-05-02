@@ -34,6 +34,13 @@ resource "aws_instance" "mongodb" {
     Name = "mongodb"
   }
 }
+resource "aws_route53_record" "mongodb" {
+  zone_id = "Z0587270PBVKKHW0FPNL"
+  name    = "mongodb-dev.swedev99.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.mongodb.private_ip]
+}
 resource "aws_instance" "redis" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
   instance_type = "t3.micro"
@@ -41,6 +48,13 @@ resource "aws_instance" "redis" {
   tags = {
     Name = "redis"
   }
+}
+resource "aws_route53_record" "redis" {
+  zone_id = "Z0587270PBVKKHW0FPNL"
+  name    = "redis-dev.swedev99.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.redis.private_ip]
 }
 resource "aws_instance" "user" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
@@ -50,6 +64,13 @@ resource "aws_instance" "user" {
     Name = "user"
   }
 }
+resource "aws_route53_record" "user" {
+  zone_id = "Z0587270PBVKKHW0FPNL"
+  name    = "user-dev.swedev99.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.user.private_ip]
+}
 resource "aws_instance" "cart" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
   instance_type = "t3.micro"
@@ -57,6 +78,13 @@ resource "aws_instance" "cart" {
   tags = {
     Name = "cart"
   }
+}
+resource "aws_route53_record" "cart" {
+  zone_id = "Z0587270PBVKKHW0FPNL"
+  name    = "cart-dev.swedev99.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.cart.private_ip]
 }
 resource "aws_instance" "catlogue" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
@@ -66,6 +94,13 @@ resource "aws_instance" "catlogue" {
     Name = "catalogue"
   }
 }
+resource "aws_route53_record" "catlogue" {
+  zone_id = "Z0587270PBVKKHW0FPNL"
+  name    = "catlogue-dev.swedev99.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.catlogue.private_ip]
+}
 resource "aws_instance" "mysql" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
   instance_type = "t3.micro"
@@ -73,6 +108,13 @@ resource "aws_instance" "mysql" {
   tags = {
     Name = "mysql"
   }
+}
+resource "aws_route53_record" "mysql" {
+  zone_id = "Z0587270PBVKKHW0FPNL"
+  name    = "mysql-dev.swedev99.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.mysql.private_ip]
 }
 resource "aws_instance" "rabbitmq" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
@@ -82,6 +124,13 @@ resource "aws_instance" "rabbitmq" {
     Name = "rabbitmq"
   }
 }
+resource "aws_route53_record" "rabbitmq" {
+  zone_id = "Z0587270PBVKKHW0FPNL"
+  name    = "rabbitmq-dev.swedev99.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.rabbitmq.private_ip]
+}
 resource "aws_instance" "payment" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
   instance_type = "t3.micro"
@@ -89,4 +138,11 @@ resource "aws_instance" "payment" {
   tags = {
     Name = "payment"
   }
+}
+resource "aws_route53_record" "payment" {
+  zone_id = "Z0587270PBVKKHW0FPNL"
+  name    = "payment-dev.swedev99.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.payment.private_ip]
 }
