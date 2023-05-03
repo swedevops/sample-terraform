@@ -3,24 +3,24 @@ data "aws_ami" "centos" {
   most_recent = true
   name_regex = "Centos-8-DevOps-Practice"
 }
-resource "aws_instance" "frontend" {
+resource "aws_instance" "swethu" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
   instance_type = "t3.micro"
 
   tags = {
-    Name = "frontend"
+    Name = "swethu"
   }
 }
 
-  output "HelloWorld" {
+  output "swethu" {
     value = aws_instance.HelloWorld.public_ip
   }
 
 resource "aws_route53_record" "frontend" {
   zone_id = "Z0587270PBVKKHW0FPNL"
-  name    = "frontend-dev.swedev99.online"
+  name    = "swethu-dev.swedev99.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.frontend.private_ip]
+  records = [aws_instance.swethu.private_ip]
 }
 
