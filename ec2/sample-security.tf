@@ -12,8 +12,8 @@ resource "aws_instance" "swethu" {
   }
 }
 
-  output "swethu" {
-    value = aws_instance.swethu.public_ip
+  output "ami" {
+    value = data.aws_ami.centos.image_id
   }
 
 #resource "aws_route53_record" "swethu" {
