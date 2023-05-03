@@ -12,7 +12,8 @@ variable "sample_list"{
   "swethu",
   99,
   true,
-  100]
+  100
+  ]
 }
 variable "sample_dict"{
   default = {
