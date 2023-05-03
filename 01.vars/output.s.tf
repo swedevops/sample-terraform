@@ -16,3 +16,9 @@ output "sample_dict"{
 output "sample_dict1"{
   value = var.sample_dict["string"]
 }
+output "env"{
+  value = var.env
+}
+output "auto_num"{
+  value = var.auto_num
+}

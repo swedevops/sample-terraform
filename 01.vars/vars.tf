@@ -23,3 +23,5 @@ variable "sample_dict"{
     boolean ="true"
   }
 }
+variable "env"{}
+variable "auto_num"{}
