@@ -11,9 +11,6 @@ resource "aws_instance" "HelloWorld" {
     Name = "HelloWorld"
   }
 }
-  output "HelloWorld" {
-    value = aws_instance.HelloWorld.public_ip
-  }
 
 resource "aws_instance" "frontend" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
@@ -150,3 +147,4 @@ resource "aws_route53_record" "payment" {
   ttl     = 30
   records = [aws_instance.payment.private_ip]
 }
+
