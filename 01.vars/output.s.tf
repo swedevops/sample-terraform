@@ -15,6 +15,6 @@ output "sample_list" {
   value = var.sample_list[0]
 }
 output "sample_dict"{
-  value = var.sample_dict[1]
+  value = var.sample_dict["number1"]
 }
 
