@@ -1,3 +1,3 @@
 output "sample_string" {
-  value = value.sample_string
+  value = var.sample_string
 }
