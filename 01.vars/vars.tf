@@ -15,7 +15,7 @@ variable "sample_list"{
   100]
 }
 variable "sample_dict"{
-  defaault = {
+  default = {
     number1 = 200
     string = "swetha reddy"
     number2 ="300"
