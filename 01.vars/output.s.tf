@@ -22,3 +22,6 @@ output "env"{
 output "auto_num"{
   value = var.auto_num
 }
+output "sample" {
+  value = var.sample
+}
