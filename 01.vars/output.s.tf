@@ -13,6 +13,4 @@ output "sample_list"{
 output "sample_dict"{
   value = var.sample_list["number1"]
 }
-output "sample_dict1"{
-  value = var.sample_list["string"]
-}
+o
