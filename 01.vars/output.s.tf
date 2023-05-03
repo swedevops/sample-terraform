@@ -11,3 +11,6 @@ output "sample_number"{
 output "sample_boolean" {
   value = var.sample_boolean
 }
+output "sample_list"{
+  value = var.sample_list[1]
+}

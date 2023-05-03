@@ -7,3 +7,11 @@ variable "sample_number" {
 variable "sample_boolean" {
   default = true
 }
+variable "sample_list"{
+  default = [
+    "hiswe",
+    99,
+    true,
+    999
+  ]
+}
