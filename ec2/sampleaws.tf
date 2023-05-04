@@ -11,7 +11,7 @@ variable "instance_type" {
 }
 
 resource "aws_instance" "frontend1" {
-  ami           = "ami-0b5a2b5b8f2be4ec2"
+  ami           = data.aws_ami.centos.image_id
   instance_type = var.instance_type
   vpc_security_group_ids = [data.aws_security_group.test.id]
 
@@ -27,7 +27,7 @@ resource "aws_instance" "frontend1" {
     records = [aws_instance.frontend1.private_ip]
  }
 resource "aws_instance" "mongodb" {
-  ami           = "ami-0b5a2b5b8f2be4ec2"
+  ami           = data.aws_ami.centos.image_id
   instance_type =  var.instance_type
   vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
@@ -42,7 +42,7 @@ resource "aws_route53_record" "mongodb" {
   records = [aws_instance.mongodb.private_ip]
 }
 resource "aws_instance" "redis" {
-  ami           = "ami-0b5a2b5b8f2be4ec2"
+  ami           = data.aws_ami.centos.image_id
   instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
@@ -57,7 +57,7 @@ resource "aws_route53_record" "redis" {
   records = [aws_instance.redis.private_ip]
 }
 resource "aws_instance" "user" {
-  ami           = "ami-0b5a2b5b8f2be4ec2"
+  ami           = data.aws_ami.centos.image_id
   instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
@@ -72,7 +72,7 @@ resource "aws_route53_record" "user" {
   records = [aws_instance.user.private_ip]
 }
 resource "aws_instance" "cart" {
-  ami           = "ami-0b5a2b5b8f2be4ec2"
+  ami           = data.aws_ami.centos.image_id
   instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
@@ -87,7 +87,7 @@ resource "aws_route53_record" "cart" {
   records = [aws_instance.cart.private_ip]
 }
 resource "aws_instance" "catlogue" {
-  ami           = "ami-0b5a2b5b8f2be4ec2"
+  ami           = data.aws_ami.centos.image_id
   instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
@@ -102,7 +102,7 @@ resource "aws_route53_record" "catlogue" {
   records = [aws_instance.catlogue.private_ip]
 }
 resource "aws_instance" "mysql" {
-  ami           = "ami-0b5a2b5b8f2be4ec2"
+  ami           = data.aws_ami.centos.image_id
   instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
@@ -117,7 +117,7 @@ resource "aws_route53_record" "mysql" {
   records = [aws_instance.mysql.private_ip]
 }
 resource "aws_instance" "rabbitmq" {
-  ami           = "ami-0b5a2b5b8f2be4ec2"
+  ami           = data.aws_ami.centos.image_id
   instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
@@ -132,7 +132,7 @@ resource "aws_route53_record" "rabbitmq" {
   records = [aws_instance.rabbitmq.private_ip]
 }
 resource "aws_instance" "payment" {
-  ami           = "ami-0b5a2b5b8f2be4ec2"
+  ami           = data.aws_ami.centos.image_id
   instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
