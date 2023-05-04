@@ -9,13 +9,17 @@ data "aws_security_group" "test" {
 variable "instance_type" {
   default = "t3.micro"
 }
-resource "aws_instance" "swet" {
+variable "components"{
+  default = ["swetha","bhrani","prasanna"]
+}
+resource "aws_instance" "instance" {
+  count  = length(var.components)
   ami           = data.aws_ami.centos.image_id
   instance_type = var.instance_type
   vpc_security_group_ids = [data.aws_security_group.test.id]
 
   tags = {
-    Name = "swet"
+    Name = var.components[count.index]
   }
 }
 
