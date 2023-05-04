@@ -9,13 +9,13 @@ data "aws_security_group" "test" {
 variable "instance_type" {
   default = "t3.micro"
 }
-resource "aws_instance" "mongodb" {
+resource "aws_instance" "swe" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
-  instance_type = "instance_type"
+  instance_type = var.instance_type
   vpc_security_group_ids = [data.aws_security_group.test.id]
 
   tags = {
-    Name = "mongodb"
+    Name = "swe"
   }
 }
 
