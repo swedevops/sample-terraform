@@ -7,7 +7,7 @@ data "aws_security_group" "test" {
   name = "test"
 }
 variable "instance_type" {
-  default = "var.instance_type"
+  default =  var.instance_type
 }
 
 resource "aws_instance" "frontend1" {
@@ -28,7 +28,7 @@ resource "aws_instance" "frontend1" {
  }
 resource "aws_instance" "mongodb" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
-  instance_type = "var.instance_type"
+  instance_type =  var.instance_type
   vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
     Name = "mongodb"
@@ -43,7 +43,7 @@ resource "aws_route53_record" "mongodb" {
 }
 resource "aws_instance" "redis" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
-  instance_type = "var.instance_type"
+  instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
     Name = "redis"
@@ -58,7 +58,7 @@ resource "aws_route53_record" "redis" {
 }
 resource "aws_instance" "user" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
-  instance_type = "var.instance_type"
+  instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
     Name = "user"
@@ -73,7 +73,7 @@ resource "aws_route53_record" "user" {
 }
 resource "aws_instance" "cart" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
-  instance_type = "var.instance_type"
+  instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
     Name = "cart"
@@ -88,7 +88,7 @@ resource "aws_route53_record" "cart" {
 }
 resource "aws_instance" "catlogue" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
-  instance_type = "var.instance_type"
+  instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
     Name = "catalogue"
@@ -103,7 +103,7 @@ resource "aws_route53_record" "catlogue" {
 }
 resource "aws_instance" "mysql" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
-  instance_type = "var.instance_type"
+  instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
     Name = "mysql"
@@ -118,7 +118,7 @@ resource "aws_route53_record" "mysql" {
 }
 resource "aws_instance" "rabbitmq" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
-  instance_type = "var.instance_type"
+  instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
     Name = "rabbitmq"
@@ -133,7 +133,7 @@ resource "aws_route53_record" "rabbitmq" {
 }
 resource "aws_instance" "payment" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
-  instance_type = "var.instance_type"
+  instance_type =  var.instance_type
  vpc_security_group_ids = [data.aws_security_group.test.id]
   tags = {
     Name = "payment"
