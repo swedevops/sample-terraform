@@ -7,7 +7,7 @@ data "aws_security_group" "test" {
   name = "test"
 }
 variable "instance_type" {
-  default =  var.instance_type
+  default = "t3micro"
 }
 
 resource "aws_instance" "frontend1" {
