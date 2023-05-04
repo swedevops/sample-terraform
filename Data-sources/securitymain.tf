@@ -6,13 +6,16 @@ data "aws_ami" "centos" {
 data "aws_security_group" "test" {
   name = "test"
 }
-resource "aws_instance" "frontend" {
+variable "instance_type" {
+  default = "t3.micro"
+}
+resource "aws_instance" "swe" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
-  instance_type = "t3.micro"
+  instance_type = "instance_type"
   vpc_security_group_ids = [data.aws_security_group.test.id]
 
   tags = {
-    Name = "frontend"
+    Name = "swe"
   }
 }
 
