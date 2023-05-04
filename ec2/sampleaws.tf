@@ -9,6 +9,7 @@ data "aws_security_group" "test" {
 variable "instance_type" {
   default = "t3.micro"
 }
+
 resource "aws_instance" "frontend1" {
   ami           = "ami-0b5a2b5b8f2be4ec2"
   instance_type = var.instance_type
