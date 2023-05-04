@@ -6,20 +6,58 @@ data "aws_ami" "centos" {
 data "aws_security_group" "test" {
   name = "test"
 }
-variable "instance_type" {
-  default = "t3.micro"
-}
-variable "components"{
-  default = ["swetha","bhrani","prasanna"]
-}
+variable "components" {
+  default = {
+    frontend = {
+      name = "frontend"
+      instance_type = "t3.micro"
+    }
+    mongodb = {
+      name = "mongodb"
+      instance_type = "t3.micro"
+    }
+    catalogue = {
+      name = "catalogue"
+      instance_type = "t3.micro"
+    }
+    redis = {
+      name = "redis"
+      instance_type = "t3.micro"
+    }
+    user = {
+      name = "user"
+      instance_type = "t3.small"
+    }
+    cart = {
+      name = "cart"
+      instance_type = "t3.micro"
+    }
+    mysql = {
+      name = "mysql"
+      instance_type = "t3.micro"
+    }
+    shipping = {
+      name = "shipping"
+      instance_type = "t3.medium"
+    }
+    rabbitmq = {
+      name = "rabbitmq"
+      instance_type = "t3.small"
+    }
+    payment = {
+      name = "payment"
+      instance_type = "t3.small"
+    }
+  }
+  }
 resource "aws_instance" "instance" {
-  count  = length(var.components)
+  for-each      = var.components
   ami           = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
+  instance_type = each.value["instance_type"]
   vpc_security_group_ids = [data.aws_security_group.test.id]
 
   tags = {
-    Name = var.components[count.index]
+    Name = each.value["name"]
   }
 }
 
