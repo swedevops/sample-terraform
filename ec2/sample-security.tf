@@ -12,9 +12,7 @@ resource "aws_instance" "swethu" {
   }
 }
 
-  output "ami" {
-    value = data.aws_ami.centos.image_id
-  }
+
 
 #resource "aws_route53_record" "swethu" {
  # zone_id = "Z0587270PBVKKHW0FPNL"
