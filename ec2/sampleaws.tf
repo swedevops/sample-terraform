@@ -20,7 +20,7 @@ resource "aws_instance" "frontend1" {
   }
 }
  resource "aws_route53_record" "frontend" {
-   zone_id = "Z0587270PBVKKHW0FPNL"
+   zone_id = "Z1048100LC65DKLVK5RL"
     name    = "frontend-dev.swedev99.online"
     type    = "A"
     ttl     = 30
@@ -35,7 +35,7 @@ resource "aws_instance" "mongodb" {
   }
 }
 resource "aws_route53_record" "mongodb" {
-  zone_id = "Z0587270PBVKKHW0FPNL"
+  zone_id = "Z1048100LC65DKLVK5RL"
   name    = "mongodb-dev.swedev99.online"
   type    = "A"
   ttl     = 30
@@ -50,7 +50,7 @@ resource "aws_instance" "redis" {
   }
 }
 resource "aws_route53_record" "redis" {
-  zone_id = "Z0587270PBVKKHW0FPNL"
+  zone_id = "Z1048100LC65DKLVK5RL"
   name    = "redis-dev.swedev99.online"
   type    = "A"
   ttl     = 30
@@ -65,7 +65,7 @@ resource "aws_instance" "user" {
   }
 }
 resource "aws_route53_record" "user" {
-  zone_id = "Z0587270PBVKKHW0FPNL"
+  zone_id = "Z1048100LC65DKLVK5RL"
   name    = "user-dev.swedev99.online"
   type    = "A"
   ttl     = 30
@@ -80,7 +80,7 @@ resource "aws_instance" "cart" {
   }
 }
 resource "aws_route53_record" "cart" {
-  zone_id = "Z0587270PBVKKHW0FPNL"
+  zone_id = "Z1048100LC65DKLVK5RL"
   name    = "cart-dev.swedev99.online"
   type    = "A"
   ttl     = 30
@@ -95,7 +95,7 @@ resource "aws_instance" "catlogue" {
   }
 }
 resource "aws_route53_record" "catlogue" {
-  zone_id = "Z0587270PBVKKHW0FPNL"
+  zone_id = "Z1048100LC65DKLVK5RL"
   name    = "catlogue-dev.swedev99.online"
   type    = "A"
   ttl     = 30
@@ -110,7 +110,7 @@ resource "aws_instance" "mysql" {
   }
 }
 resource "aws_route53_record" "mysql" {
-  zone_id = "Z0587270PBVKKHW0FPNL"
+  zone_id = "Z1048100LC65DKLVK5RL"
   name    = "mysql-dev.swedev99.online"
   type    = "A"
   ttl     = 30
@@ -125,7 +125,7 @@ resource "aws_instance" "rabbitmq" {
   }
 }
 resource "aws_route53_record" "rabbitmq" {
-  zone_id = "Z0587270PBVKKHW0FPNL"
+  zone_id = "Z1048100LC65DKLVK5RL"
   name    = "rabbitmq-dev.swedev99.online"
   type    = "A"
   ttl     = 30
@@ -140,7 +140,7 @@ resource "aws_instance" "payment" {
   }
 }
 resource "aws_route53_record" "payment" {
-  zone_id = "Z0587270PBVKKHW0FPNL"
+  zone_id = "Z1048100LC65DKLVK5RL"
   name    = "payment-dev.swedev99.online"
   type    = "A"
   ttl     = 30
